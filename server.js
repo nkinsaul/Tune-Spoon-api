@@ -4,8 +4,12 @@ const port = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
   res.send('Hello world!')
-})
+});
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}...`)
-})
+});
+
+// first endpoint: id, album title, artist, image
+
+// second endpoint: id, album title, artist, track list, information....
