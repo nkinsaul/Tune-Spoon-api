@@ -21,8 +21,8 @@ const albums = [
 
   {
     id: 4,
-    title: SOS,
-    artist: SZA,
+    title: 'SOS',
+    artist: 'SZA',
     image: 'https://lastfm.freetls.fastly.net/i/u/770x0/b2cfb5bdf137f4d6293565205965750f.jpg#b2cfb5bdf137f4d6293565205965750f'
   },
 
@@ -245,4 +245,4 @@ const albums = [
   
 ]
 
-export default albums
+module.exports = albums
