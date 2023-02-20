@@ -2,10 +2,10 @@
 const albums = require('./data/albums')
 const albumDetails = require('./data/albumDetails')
 const userData = require('./data/userData')
-
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
+app.use(express.json());
 app.locals.favorites = []
 
 app.get('/albums', (req, res) => {
@@ -33,6 +33,19 @@ app.get('/favorites', (req, res) => {
 
 app.post('/user', (req, res) => {
 
+})
+
+app.get('/favorites', (req, res) => {
+  const favorites = app.locals.favorites
+  res.json({favorites})
+})
+
+app.post('/favorites', (req, res) => {
+  const { id } = req.body 
+
+  app.locals.favorites.push({ id })
+
+  res.status(201).json({ id })
 })
 
 
