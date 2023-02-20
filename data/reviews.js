@@ -1,6 +1,6 @@
 const reviews = [
   {
-    id: 1,
+    albumID: 1,
     reviews: [
       {
         review: 'Caroline Polachek dives into the contradictory crux of the human experience on Desire, I Want to Turn Into You, an album of breathtakingly original pop songs.',
@@ -71,7 +71,7 @@ const reviews = [
   },
 
   {
-    id: 2,
+    albumID: 2,
     reviews: [
       {
         "0": "Fantastic"
@@ -80,7 +80,7 @@ const reviews = [
   },
 
   {
-    id: 3,
+    albumID: 3,
     reviews: [
       {
         review: 'Despite its polished production, Unlimited Love sees the Red Hot Chili Peppers throw caution to the wind as they take risks and revel in a genuine sense of weirdness; ultimately, Unlimited Love can stand strong as a latter career highlight as the most exciting release from the Red Hot Chili Peppers in nearly twenty years.',
@@ -159,7 +159,7 @@ const reviews = [
   },
 
   {
-    id: 4,
+    albumID: 4,
     reviews: [
       {
         review: "The US star's first album in five years – and her last ever, she says – is sprawling, superb and rarely puts a foot wrong.",
@@ -273,7 +273,7 @@ const reviews = [
   },
 
   {
-    id: 5,
+    albumID: 5,
     reviews: [
       {
         review: `This album takes a lot of the best parts of Traver's solo project, Kalbells, and combines it with the direction of their last project, Sun Machine, and I am very pleased with the end result. "Geometry" has been in and out of my head since it released as a single and the second half of the album (which contains none of the four lead singles) has some of the best examples of the fun of Rubblebucket's style of writing ("Sweet Spot," "Sexual Revolution," & ... read more`,
@@ -289,7 +289,7 @@ const reviews = [
   },
 
   {
-    id: 6,
+    albumID: 6,
     reviews: [
       {
         review: 'From track to track, one ingenious idea trails another. Vocal melodies and guitar wriggles sneak up and tickle the ears, burbling electronics mingle with spiny acoustic guitars, time signatures abruptly switch and stun.',
@@ -343,7 +343,7 @@ const reviews = [
   },
 
   {
-    id: 7,
+    albumID: 7,
     reviews: [
       {
         review: 'On Drunk, you are grabbed by the ankles and pulled into the rabbit hole of Bruner’s mind. It’s a dizzying ride.',
@@ -444,7 +444,7 @@ const reviews = [
   },
 
   {
-    id: 8,
+    albumID: 8,
     reviews: [
       {
         review: 'This irresistible album is overflowing with love and gratitude to friends, family, lovers and fans.',
@@ -558,7 +558,7 @@ const reviews = [
   },
 
   {
-    id: 9,
+    albumID: 9,
     reviews: [
       {
         review: 'The Vulf boys have done it again, such a massive improvement from their last album',
@@ -569,7 +569,7 @@ const reviews = [
   },
 
   {
-    id: 10,
+    albumID: 10,
     reviews: [
       {
         review: 'Although Back to Black does see her deserting jazz and wholly embracing contemporary R&B, all the best parts of her musical character emerge intact, and actually, are all the better for the transformation from jazz vocalist to soul siren.',
@@ -645,7 +645,7 @@ const reviews = [
   },
 
   {
-    id: 11,
+    albumID: 11,
     reviews: [
       {
         review: "It's pure, distilled Quasi. ... Sam Coomes's songs are all killer. ... Janet Weiss, meanwhile, once again proves herself to be a fine vocal foil, and perhaps the greatest rock drummer alive.",
@@ -721,7 +721,7 @@ const reviews = [
   },
 
   {
-    id: 12,
+    albumID: 12,
     reviews: [
       {
         review: 'I’ve seen you do some pretty sus things Billy, I wouldn’t exactly call you innocent',
@@ -736,7 +736,7 @@ const reviews = [
   },
 
   {
-    id: 13,
+    albumID: 13,
     reviews: [
       {
         review: 'Waking Up boasts enough intertwining pop melodies backed with anthemic vocals to show ... that OneRepublic can deliver more addictive hooks while still maintaining its own graceful and introspective sound.',
@@ -797,7 +797,7 @@ const reviews = [
   },
 
   {
-    id: 14,
+    albumID: 14,
     reviews: [
       { review: '"Separate Ways" boosts this score by 32%.', id: 0 },
       {
@@ -808,7 +808,7 @@ const reviews = [
   },
 
   {
-    id: 15,
+    albumID: 15,
     reviews: [
       {
         review: 'Look Rocket Man is amazing but an me give more love to Mona Lisas And Mad Hatters :)',
@@ -850,7 +850,7 @@ const reviews = [
   },
 
   {
-    id: 16,
+    albumID: 16,
     reviews: [
       {
         review: "Whether Abbey Road is the Beatles' best work is debatable, but it's certainly the most immaculately produced (with the possible exception of Sgt. Pepper) and most tightly constructed.",
@@ -888,7 +888,7 @@ const reviews = [
   },
 
   {
-    id: 17,
+    albumID: 17,
     reviews: [
       
     ]
