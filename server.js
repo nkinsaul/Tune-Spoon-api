@@ -38,16 +38,18 @@ app.post('/user', (req, res) => {
   const { id } = req.body 
   const userData = require('./data/userData.json')
 
-  console.log(userData)
-  if(!userData.favoriteAlbums.includes(id)) {
+  if((!userData.favoriteAlbums.includes(id)) && id <= albums.length) {
     userData.favoriteAlbums.push(id)
     fs.writeFile('./data/userData.json',JSON.stringify(userData), error => {
       if(error) {
         console.error(err)
       }
     })
+  } else if(userData.favoriteAlbums.includes(id)){
+    res.send('This album is already favorited.')
+  } else {
+    res.send('This album does not exist.')
   }
-
   res.status(201).json({ id })
 })
 
