@@ -35,8 +35,17 @@ app.get('/user', (req, res) => {
 })
 
 app.post('/user', (req, res) => {
-  const { id } = req.body 
+  const album = req.body
+  const { id }  = album
   const userData = require('./data/userData.json')
+
+  for (let requiredParameter of ['id']) {
+    if (!album[requiredParameter]) {
+      res
+        .status(422)
+        .send({ error: `Expected format: { id: <String> }. You're missing a "${requiredParameter}" property.` });
+    }
+  }
 
   if((!userData.favoriteAlbums.includes(id)) && id <= albums.length) {
     userData.favoriteAlbums.push(id)
@@ -44,13 +53,13 @@ app.post('/user', (req, res) => {
       if(error) {
         console.error(err)
       }
+      res.status(201).json({ id })
     })
   } else if(userData.favoriteAlbums.includes(id)){
     res.send('This album is already favorited.')
   } else {
     res.send('This album does not exist.')
   }
-  res.status(201).json({ id })
 })
 
 
