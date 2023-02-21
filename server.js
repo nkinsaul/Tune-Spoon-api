@@ -1,12 +1,15 @@
 // import albums from './data/albums'
 const albums = require('./data/albums')
 const albumDetails = require('./data/albumDetails')
-const userData = require('./data/userData')
+const favorites = require('./data/userData')
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
+const fs = require('fs');
+
 app.use(express.json());
-app.locals.favorites = []
+
+
 
 app.get('/albums', (req, res) => {
   res.send(albums)
@@ -26,24 +29,24 @@ app.get('/album/:albumId', (req, res) => {
   res.status(200).json(album)
 })
 
-app.get('/favorites', (req, res) => {
-  const favorites = app.locals.favorites
-  res.json({favorites})
+app.get('/user', (req, res) => {
+  const userData = require('./data/userData.json')
+  res.send(JSON.stringify(userData))
 })
 
 app.post('/user', (req, res) => {
-
-})
-
-app.get('/favorites', (req, res) => {
-  const favorites = app.locals.favorites
-  res.json({favorites})
-})
-
-app.post('/favorites', (req, res) => {
   const { id } = req.body 
+  const userData = require('./data/userData.json')
 
-  app.locals.favorites.push({ id })
+  console.log(userData)
+  if(!userData.favoriteAlbums.includes(id)) {
+    userData.favoriteAlbums.push(id)
+    fs.writeFile('./data/userData.json',JSON.stringify(userData), error => {
+      if(error) {
+        console.error(err)
+      }
+    })
+  }
 
   res.status(201).json({ id })
 })
