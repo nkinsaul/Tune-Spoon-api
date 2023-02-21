@@ -78,6 +78,12 @@ const albums = [
     artist: 'Billy Joel',
     image: 'https://lastfm.freetls.fastly.net/i/u/770x0/a12d150c799c416daef11949670485c8.jpg#a12d150c799c416daef11949670485c8',
   },
+  {
+    id: 13,
+    title: 'Waking Up',
+    artist: 'OneRepublic',
+    image: 'https://lastfm.freetls.fastly.net/i/u/770x0/b243e3b226cf4b3089e166f30e2cb83c.jpg#b243e3b226cf4b3089e166f30e2cb83c',
+  },
   { 
     id: 14,
     title: 'Frontiers',
