@@ -11,9 +11,6 @@ const fs = require('fs');
 
 app.use(express.json());
 
-
-
-
 app.locals = {
   albums,
   reviews,
@@ -29,7 +26,6 @@ app.get('/albums/reviews', (req, res) => {
   res.status(200).json(reviews)
 });
 
-
 app.get('/albums/:id/reviews/', (req, res) => {
    const { id } = req.params
    const { reviews } = app.locals
@@ -43,7 +39,6 @@ app.get('/albums/:id/reviews/', (req, res) => {
   }
    res.status(200).json(reviewsId);
 });
-
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}...`)
@@ -82,3 +77,36 @@ app.post('/albums/reviews', (request, response) => {
   
   response.status(201).json({review, reviewID, userID})
 })
+
+app.get('/user', (req, res) => {
+  const userData = require('./data/userData.json')
+  res.send(JSON.stringify(userData))
+ })
+ 
+app.post('/user', (req, res) => {
+const album = req.body
+const { id }  = album
+const userData = require('./data/userData.json')
+
+
+for (let requiredParameter of ['id']) {
+  if (!album[requiredParameter]) {
+    res
+      .status(422)
+      .send({ error: `Expected format: { id: <String> }. You're missing a "${requiredParameter}" property.` });
+  }
+}
+
+
+if((!userData.favoriteAlbums.includes(id)) && id <= albums.length) {
+  userData.favoriteAlbums.push(id)
+  res.status(201).json({ id })
+
+
+} else if(userData.favoriteAlbums.includes(id)){
+  res.send('This album is already favorited.')
+} else {
+  res.send('This album does not exist.')
+}
+})
+ 
