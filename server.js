@@ -109,6 +109,7 @@ app.delete('/reviews/:albumId/:userId/:reviewId', (req,res) => {
   })
   
   res.json(reviewToDelete)
+})
 
 app.get('/user', (req, res) => {
   const userData = require('./data/userData.json')
@@ -144,6 +145,3 @@ app.post('/user', (req, res) => {
 })
 
 
-// first endpoint: id, album title, artist, image
-
-// second endpoint: id, album title, artist, track list, information....
