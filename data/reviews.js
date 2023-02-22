@@ -1505,3 +1505,5 @@ const reviews = [
 ]
 
 module.exports = reviews
+
+module.exports = reviews

@@ -7,12 +7,17 @@ const { request } = require('http');
 const { response } = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
+const fs = require('fs');
+
 app.use(express.json());
+
+
 
 
 app.locals = {
   albums,
-  reviews
+  reviews,
+  albumDetails
 }
 
 app.get('/albums', (req, res) => {
@@ -44,12 +49,14 @@ app.listen(port, () => {
   console.log(`Listening on port ${port}...`)
 });
 
-app.get('/album/:albumId', (req,res) => {
+app.get('/album/:albumId', (req, res) => {
   const albumId = req.params.albumId
   const album = albumDetails.find(album => album.id.toString() === albumId)
 
   if (!album) {
-    return res.sendStatus(404)
+    return res.sendStatus(404).json({
+      message: `No albums found with an id of ${id}`
+    })
   }
   res.status(200).json(album)
 })
