@@ -65,13 +65,13 @@ app.post('/albums/reviews', (request, response) => {
     }
   }
   
-  const { albumID } = reviewBody
+  const { albumID, review, userID } = reviewBody
    
   const album = app.locals.reviews.find(album => 
     albumID === album.albumID.toString()
   )
   
-  album.reviews.push({reviewID, ...reviewBody})
+  album.reviews.push({reviewID, review, userID})
   
-  response.status(201).json({reviewID, ...reviewBody})
+  response.status(201).json({review, reviewID, userID})
 })
