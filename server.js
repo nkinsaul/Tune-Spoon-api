@@ -49,12 +49,8 @@ app.post('/user', (req, res) => {
 
   if((!userData.favoriteAlbums.includes(id)) && id <= albums.length) {
     userData.favoriteAlbums.push(id)
-    fs.writeFile('./data/userData.json',JSON.stringify(userData), error => {
-      if(error) {
-        console.error(err)
-      }
-      res.status(201).json({ id })
-    })
+    res.status(201).json({ id })
+
   } else if(userData.favoriteAlbums.includes(id)){
     res.send('This album is already favorited.')
   } else {
