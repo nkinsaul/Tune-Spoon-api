@@ -16,7 +16,8 @@ app.use(express.json());
 
 app.locals = {
   albums,
-  reviews
+  reviews,
+  albumDetails
 }
 
 app.get('/albums', (req, res) => {
@@ -53,10 +54,61 @@ app.get('/album/:albumId', (req, res) => {
   const album = albumDetails.find(album => album.id.toString() === albumId)
 
   if (!album) {
-    return res.sendStatus(404)
+    return res.sendStatus(404).json({
+      message: `No albums found with an id of ${id}`
+    })
   }
   res.status(200).json(album)
 })
+
+
+// For testing purposes only
+app.get('/reviews/:albumId/:userId/:reviewId', (req,res) => {
+  let { albumId, userId, reviewId } = req.params
+
+  const albumToAccess = app.locals.reviews.find(album => album.albumID == albumId)
+  if (!albumToAccess) {
+    return res.sendStatus(404).json({
+      message: `No albums found with an id of ${albumId}`
+    })
+  }
+  const reviewToDelete = albumToAccess.reviews.find(reviews => (reviews.reviewID == reviewId) && (reviews.userID == userId))
+  
+  if (!reviewToDelete) {
+    return res.sendStatus(404).json({
+      message: `No review found with a reviewId of ${reviewId} and userId ${userId}`
+    })
+  }
+  
+  res.json(reviewToDelete)
+})
+
+app.delete('/reviews/:albumId/:userId/:reviewId', (req,res) => {
+  let { albumId, userId, reviewId } = req.params
+
+  const albumToAccess = app.locals.reviews.find(album => album.albumID == albumId)
+  if (!albumToAccess) {
+    return res.sendStatus(404).json({
+      message: `No albums found with an id of ${albumId}`
+    })
+  }
+
+  const reviewToDelete = albumToAccess.reviews.find(reviews => (reviews.reviewID == reviewId) && (reviews.userID == userId))
+
+  if (!reviewToDelete) {
+    return res.sendStatus(404).json({
+      message: `No review found with a reviewId of ${reviewId} and userId ${userId}`
+    })
+  }
+
+  let indexOfAlbum = app.locals.reviews.findIndex(album => album.albumID ==albumId)
+  app.locals.reviews[indexOfAlbum].reviews = app.locals.reviews[indexOfAlbum].reviews.filter(review => {
+    if ((review.reviewID != reviewId) && review.userID != userId){
+      return true
+    }
+  })
+  
+  res.json(reviewToDelete)
 
 app.get('/user', (req, res) => {
   const userData = require('./data/userData.json')
