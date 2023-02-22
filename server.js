@@ -1,11 +1,7 @@
-// import albums from './data/albums'
+
 const albums = require('./data/albums')
-
 const reviews = require('./data/reviews')
-
 const albumDetails = require('./data/albumDetails')
-
-
 const express = require('express');
 const { request } = require('http');
 const { response } = require('express');
@@ -30,8 +26,9 @@ app.get('/albums/reviews', (req, res) => {
 
 app.get('/albums/reviews/:id', (req, res) => {
    const { id } = req.params
+   console.log('request', req.params);
    const { reviews } = app.locals
-   let reviewsId = reviews.find(review => review.id == id);
+   let reviewsId = reviews.find(review => review.albumID == id);
    
 
    if (!reviewsId) {
@@ -57,7 +54,11 @@ app.get('/album/:albumId', (req,res) => {
   res.status(200).json(album)
 })
 
+app.post('/album/review', (request, response) => {
+  const id = Date.now()
+  const { albumId, userName, review } = request.body
 
-// first endpoint: id, album title, artist, image
+  
 
-// second endpoint: id, album title, artist, track list, information....
+  response.status(200).json({id, userName, review})
+})

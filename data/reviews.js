@@ -1495,16 +1495,6 @@ const reviews = [
         reviewID: 3,
         userID: 17
       },
-      {
-        userName: 'ScoutTaco',
-        review: 'I am obsessed with the Dire Straits at this moment, I just love the feel of their music, and this album is awesome, although some parts have poorly aged.\n' +
-          'Come on Mark, "See the little faggot with the earring and the makeup?\n' +
-          "Yeah buddy, that's his own hair\n" +
-          'That little faggot got his own jet airplane\n' +
-          `That little faggot, he's a millionaire" wouldn't fly today, the only thing that can do that type of lyrics is Seth Macfarlane.`,
-        reviewID: 4,
-        userID: 20
-      }
     ]
   },
 
