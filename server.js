@@ -1,4 +1,4 @@
-// import albums from './data/albums'
+
 const albums = require('./data/albums')
 const reviews = require('./data/reviews')
 const albumDetails = require('./data/albumDetails')
@@ -30,10 +30,10 @@ app.get('/albums/reviews', (req, res) => {
 });
 
 
-app.get('/albums/reviews/:id', (req, res) => {
+app.get('/albums/:id/reviews/', (req, res) => {
    const { id } = req.params
    const { reviews } = app.locals
-   let reviewsId = reviews.find(review => review.id == id);
+   let reviewsId = reviews.find(review => review.albumID == id);
    
 
    if (!reviewsId) {
@@ -61,87 +61,24 @@ app.get('/album/:albumId', (req, res) => {
   res.status(200).json(album)
 })
 
-
-// For testing purposes only
-app.get('/reviews/:albumId/:userId/:reviewId', (req,res) => {
-  let { albumId, userId, reviewId } = req.params
-
-  const albumToAccess = app.locals.reviews.find(album => album.albumID == albumId)
-  if (!albumToAccess) {
-    return res.sendStatus(404).json({
-      message: `No albums found with an id of ${albumId}`
-    })
-  }
-  const reviewToDelete = albumToAccess.reviews.find(reviews => (reviews.reviewID == reviewId) && (reviews.userID == userId))
-  
-  if (!reviewToDelete) {
-    return res.sendStatus(404).json({
-      message: `No review found with a reviewId of ${reviewId} and userId ${userId}`
-    })
-  }
-  
-  res.json(reviewToDelete)
-})
-
-app.delete('/reviews/:albumId/:userId/:reviewId', (req,res) => {
-  let { albumId, userId, reviewId } = req.params
-
-  const albumToAccess = app.locals.reviews.find(album => album.albumID == albumId)
-  if (!albumToAccess) {
-    return res.sendStatus(404).json({
-      message: `No albums found with an id of ${albumId}`
-    })
-  }
-
-  const reviewToDelete = albumToAccess.reviews.find(reviews => (reviews.reviewID == reviewId) && (reviews.userID == userId))
-
-  if (!reviewToDelete) {
-    return res.sendStatus(404).json({
-      message: `No review found with a reviewId of ${reviewId} and userId ${userId}`
-    })
-  }
-
-  let indexOfAlbum = app.locals.reviews.findIndex(album => album.albumID ==albumId)
-  app.locals.reviews[indexOfAlbum].reviews = app.locals.reviews[indexOfAlbum].reviews.filter(review => {
-    if ((review.reviewID != reviewId) && review.userID != userId){
-      return true
-    }
-  })
-  
-  res.json(reviewToDelete)
-})
-
-app.get('/user', (req, res) => {
-  const userData = require('./data/userData.json')
-  res.send(JSON.stringify(userData))
-})
-
-app.post('/user', (req, res) => {
-  const album = req.body
-  const { id }  = album
-  const userData = require('./data/userData.json')
-
-  for (let requiredParameter of ['id']) {
-    if (!album[requiredParameter]) {
-      res
-        .status(422)
-        .send({ error: `Expected format: { id: <String> }. You're missing a "${requiredParameter}" property.` });
+app.post('/albums/reviews', (request, response) => {
+  const reviewID = Date.now();
+  const reviewBody = request.body;
+  for(let requiredParameter of ['userName', 'albumID', 'review', 'userID']) {
+    if(!reviewBody[requiredParameter]) {
+      response
+        .status(422).json()
+        .send({error: `Expected format: { userName: <String>, albumID: <Number>, reviewText: <String>}.  You're missing a ${requiredParameter}.`})
     }
   }
-
-  if((!userData.favoriteAlbums.includes(id)) && id <= albums.length) {
-    userData.favoriteAlbums.push(id)
-    fs.writeFile('./data/userData.json',JSON.stringify(userData), error => {
-      if(error) {
-        console.error(err)
-      }
-      res.status(201).json({ id })
-    })
-  } else if(userData.favoriteAlbums.includes(id)){
-    res.send('This album is already favorited.')
-  } else {
-    res.send('This album does not exist.')
-  }
+  
+  const { albumID, review, userID } = reviewBody
+   
+  const album = app.locals.reviews.find(album => 
+    albumID === album.albumID.toString()
+  )
+  
+  album.reviews.push({reviewID, review, userID})
+  
+  response.status(201).json({review, reviewID, userID})
 })
-
-
