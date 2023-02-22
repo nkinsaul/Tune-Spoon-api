@@ -1512,5 +1512,6 @@ const reviews = [
     albumID: 40,
     reviews: []
   }
-
 ]
+
+module.exports = reviews
