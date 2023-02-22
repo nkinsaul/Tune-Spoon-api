@@ -7,6 +7,7 @@ const { request } = require('http');
 const { response } = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
+app.use(express.json());
 
 
 app.locals = {
@@ -24,9 +25,8 @@ app.get('/albums/reviews', (req, res) => {
 });
 
 
-app.get('/albums/reviews/:id', (req, res) => {
+app.get('/albums/:id/reviews/', (req, res) => {
    const { id } = req.params
-   console.log('request', req.params);
    const { reviews } = app.locals
    let reviewsId = reviews.find(review => review.albumID == id);
    
@@ -54,11 +54,24 @@ app.get('/album/:albumId', (req,res) => {
   res.status(200).json(album)
 })
 
-app.post('/album/review', (request, response) => {
-  const id = Date.now()
-  const { albumId, userName, review } = request.body
-
+app.post('/albums/reviews', (request, response) => {
+  const reviewID = Date.now();
+  const reviewBody = request.body;
+  for(let requiredParameter of ['userName', 'albumID', 'review', 'userID']) {
+    if(!reviewBody[requiredParameter]) {
+      response
+        .status(422).json()
+        .send({error: `Expected format: { userName: <String>, albumID: <Number>, reviewText: <String>}.  You're missing a ${requiredParameter}.`})
+    }
+  }
   
-
-  response.status(200).json({id, userName, review})
+  const { albumID } = reviewBody
+   
+  const album = app.locals.reviews.find(album => 
+    albumID === album.albumID.toString()
+  )
+  
+  album.reviews.push({reviewID, ...reviewBody})
+  
+  response.status(201).json({reviewID, ...reviewBody})
 })
