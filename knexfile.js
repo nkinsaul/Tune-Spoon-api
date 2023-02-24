@@ -8,9 +8,10 @@ module.exports = {
   development: {
     client: 'postgresql',
     connection: {
-      database: 'tune_spoon',
+      port: 5433,
+      database: 'tune_spoon_2',
       user:     'postgres',
-      password: 'admin'
+      password: 'Slacker-Handmade2-Uneasily'
     },
     pool: {
       min: 2,
