@@ -1,4 +1,6 @@
 
+const knexConfig = require('./db/knexfile');
+const knex = require('knex')(knexConfig[process.env.NODE_ENV])
 const albums = require('./data/albums')
 const reviews = require('./data/reviews')
 const albumDetails = require('./data/albumDetails')
