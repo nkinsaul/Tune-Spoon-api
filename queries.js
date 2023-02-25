@@ -13,8 +13,7 @@ module.exports = {
     })
   },
 
-  getSingleAlbum(req) {
-    const albumId = req.params.albumId;
+  getSingleAlbum(albumId) {
     return database('album_details').where("id", albumId).select()
   }
 }

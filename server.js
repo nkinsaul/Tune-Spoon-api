@@ -1,9 +1,4 @@
 
-// const knexConfig = require('./knexfile');
-// const knex = require('knex')(knexConfig[process.env.NODE_ENV || "development"])
-// const albums = require('./data/albums')
-// const reviews = require('./data/reviews')
-// const albumDetails = require('./data/albumDetails')
 const express = require('express');
 const { request } = require('http');
 const { response } = require('express');
@@ -25,8 +20,7 @@ app.listen(port, () => {
 });
 
 app.get('/albums', (req, res) => {
-  queries
-  .getAllAlbums()
+  queries.getAllAlbums()
   .then((albums) => {
     return res.json(albums)
   })
@@ -36,23 +30,19 @@ app.get('/albums', (req, res) => {
 });
 
 app.get('/album/:albumId', (req, res) => {
-  queries.getSingleAlbum(req)
+  const albumId = req.params.albumId;
+  queries.getSingleAlbum(albumId)
   .then((album) => {
-    return res.json(album)
+    if (!albumId) {
+      return res.sendStatus(404).json({
+        message: `No albums found with an id of ${albumId}`
+      })
+    }
+    return res.status(200).json(album)
   })
   .catch((error) => {
-    console.log(error);
+    console.log(error.message);
   })
-  // const albumId = req.params.albumId
-  // const album = albumDetails.find(album => album.id.toString() === albumId)
-  // const album = queries.getSingleAlbum(req)
-
-  // if (!album) {
-  //   return res.sendStatus(404).json({
-  //     message: `No albums found with an id of ${id}`
-  //   })
-  // }
-  // res.status(200).json(album)
 })
 
 app.post('/albums/reviews', (request, response) => {
@@ -96,11 +86,9 @@ for (let requiredParameter of ['id']) {
   }
 }
 
-
 if((!userData.favoriteAlbums.includes(id)) && id <= albums.length) {
   userData.favoriteAlbums.push(id)
   res.status(201).json({ id })
-
 
 } else if(userData.favoriteAlbums.includes(id)){
   res.send('This album is already favorited.')
@@ -109,23 +97,5 @@ if((!userData.favoriteAlbums.includes(id)) && id <= albums.length) {
 }
 })
 
-// app.get('/albums/reviews', (req, res) => {
-//   const { reviews }  = app.locals
-//   res.status(200).json(reviews)
-// });
-
-// app.get('/albums/:id/reviews/', (req, res) => {
-//    const { id } = req.params
-//    const { reviews } = app.locals
-//    let reviewsId = reviews.find(review => review.albumID == id);
-   
-
-//    if (!reviewsId) {
-//     return res.status(404).json({
-//       message: `No reviews found with an id of ${id}`
-//     });
-//   }
-//    res.status(200).json(reviewsId);
-// });
 
  
