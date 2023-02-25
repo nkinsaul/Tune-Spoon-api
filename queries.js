@@ -5,12 +5,7 @@ module.exports = {
 
   getAllAlbums() {
     return database('album')
-    .select({
-      id: 'id',
-      title: 'title',
-      artist: 'artist',
-      image: 'image'
-    })
+    .select()
   },
 
   getSingleAlbum(albumId) {
