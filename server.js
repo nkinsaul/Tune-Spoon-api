@@ -1,6 +1,6 @@
 
-const knexConfig = require('./knexfile');
-const knex = require('knex')(knexConfig[process.env.NODE_ENV || "development"])
+// const knexConfig = require('./knexfile');
+// const knex = require('knex')(knexConfig[process.env.NODE_ENV || "development"])
 // const albums = require('./data/albums')
 // const reviews = require('./data/reviews')
 // const albumDetails = require('./data/albumDetails')
@@ -10,6 +10,7 @@ const { response } = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
 const fs = require('fs');
+const queries = require('./queries')
 
 app.use(express.json());
 
@@ -20,13 +21,8 @@ app.use(express.json());
 // }
 
 app.get('/albums', (req, res) => {
-  knex('album')
-  .select({
-    id: 'id',
-    title: 'title',
-    artist: 'artist',
-    image: 'image'
-  })
+  queries
+  .getAllAlbums()
   .then((albums) => {
     return res.json(albums)
   })
