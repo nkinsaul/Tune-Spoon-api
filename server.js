@@ -1,9 +1,7 @@
 
 const express = require('express');
-// const { request } = require('http');
-const { response } = require('express');
-const { request } = require('express');
 const app = express();
+require('dotenv').config();
 const port = process.env.PORT || 3000;
 const queries = require('./queries')
 
@@ -13,7 +11,7 @@ app.listen(port, () => {
   console.log(`Listening on port ${port}...`)
 });
 
-app.get('/albums', (req, response) => {
+app.get('/albums', (request, response) => {
   queries.getAllAlbums()
   .then((albums) => {
     return response.status(200).json(albums)
