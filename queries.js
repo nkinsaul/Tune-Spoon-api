@@ -14,5 +14,13 @@ module.exports = {
 
   addReview(review) {
     return database("reviews").insert(review, "id")
+  },
+
+  getReviews() {
+    return database('reviews');
+  },
+
+  deleteReview(reviewId) {
+    return database('reviews').where('id', reviewId).del()
   }
 }

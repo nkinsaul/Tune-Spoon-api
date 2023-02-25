@@ -54,5 +54,31 @@ app.post('/albums/reviews', (request, response) => {
   })
 })
 
+app.get('/albums/reviews', (request, response) => {
+  queries.getReviews()
+  .then(reviews => {
+    return response.status(200).json(reviews)
+  })
+  .catch((error) => {
+    response.status(500).json({error})
+  })
+})
 
-  
+app.delete('/albums/reviews', (request, response) => {
+  const reviewId = request.body.review_id
+  queries.deleteReview(reviewId)
+  .then((deletedReview) => {
+    if (deletedReview) {
+      response.status(200).json({
+        message: `Review with an id of ${reviewId} has been deleted.`
+      })
+    } else {
+      response.status(404).json({
+        error: `Could not find a review with an id of ${reviewId}`
+      })
+    }
+  })
+  .catch((error) => {
+    response.status(500).json({error})
+  })
+})
