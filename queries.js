@@ -18,5 +18,9 @@ module.exports = {
 
   getReviews() {
     return database('reviews');
+  },
+
+  deleteReview(reviewId) {
+    return database('reviews').where('id', reviewId).del()
   }
 }
