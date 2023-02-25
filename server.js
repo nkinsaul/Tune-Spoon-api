@@ -46,25 +46,18 @@ app.get('/album/:albumId', (req, res) => {
 })
 
 app.post('/albums/reviews', (request, response) => {
-  const reviewID = Date.now();
-  const reviewBody = request.body;
-  for(let requiredParameter of ['userName', 'albumID', 'review', 'userID']) {
-    if(!reviewBody[requiredParameter]) {
-      response
-        .status(422).json()
-        .send({error: `Expected format: { userName: <String>, albumID: <Number>, reviewText: <String>}.  You're missing a ${requiredParameter}.`})
+  const review = request.body;
+
+  for(let requiredParameter of ['album_id', 'user_id', 'review_text']) {
+    if(!review[requiredParameter]) {
+      return response 
+        .status(422)
+        .send({error: `Expected format: {album_id: <num>, user_id: <num>, review_text: <str>}  You are missing ${requiredParameter} property.`})
     }
   }
-  
-  const { albumID, review, userID } = reviewBody
-   
-  const album = app.locals.reviews.find(album => 
-    albumID === album.albumID.toString()
-  )
-  
-  album.reviews.push({reviewID, review, userID})
-  
-  response.status(201).json({review, reviewID, userID})
+  queries.addReview(review)
+  .then(data => response.status(201).json(data))
+  .catch 
 })
 
 app.get('/user', (req, res) => {

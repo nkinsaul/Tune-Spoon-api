@@ -10,5 +10,9 @@ module.exports = {
 
   getSingleAlbum(albumId) {
     return database('album_details').where("id", albumId).select()
+  },
+
+  addReview(review) {
+    return database("reviews").insert(review, "id")
   }
 }
