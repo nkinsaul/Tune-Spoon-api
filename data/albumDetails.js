@@ -26,7 +26,8 @@ const albumDetails = [
     After releasing Pang in late 2019, Polachek was set to tour the record, but was cut short by the COVID-19 pandemic in March 2020. Polachek stayed in London on begun work on Desire, I Want to Turn Into You with close collaborator Danny L Harle. She considers the album to be a major partnership with Harle, as the record has only a few other collaborators in the mix. She continued work on the album until mid-2021, where she briefly relocated to Barcelona alongside Harle and new collaborator Sega Bodega.`,
     producer: 'Caroline Polachek',
     release_date: '02 Feb 2023, 17:22',
-    genres: ['sunset', 'pop', 'art pop', 'progressive pop']
+    genres: ['sunset', 'pop', 'art pop', 'progressive pop'],
+    favorite: false
   },
   
   {
@@ -59,7 +60,8 @@ const albumDetails = [
       'psychedelic',
       'banned',
       'indie pop'
-    ]
+    ],
+    favorite: false
   },
 
   {
@@ -89,7 +91,8 @@ const albumDetails = [
     length: 4383,
     producer: 'Rick Rubin',
     release_date: '04 Apr 2022',
-    genres: [ 'rock', 'funk rock', 'funk', 'alternative rock' ]
+    genres: [ 'rock', 'funk rock', 'funk', 'alternative rock' ],
+    favorite: false
   },
 
   {
@@ -130,7 +133,8 @@ const albumDetails = [
     SOS has received widespread critical acclaim upon its release. At Metacritic, which assigns a normalized rating out of 100 based on reviews from critics, the album received a score of 90 out of 100, based on 20 reviews, indicating "universal acclaim.`,
     producer: 'Aire Atlantica',
     release_date: '12/9/2022',
-    genres: ['soul', 'hip hop', 'rnb', 'r&b']
+    genres: ['soul', 'hip hop', 'rnb', 'r&b'],
+    favorite: false
   },
 
   {
@@ -157,7 +161,8 @@ const albumDetails = [
     description: 'Released October 21st, 2022 on Grand Jury Music',
     producer: 'Grand Jury Music',
     release_date: '10 Oct 2022, 16:32',
-    genres: ['indie pop', 'indie', 'indie rock', 'rock', 'american']
+    genres: ['indie pop', 'indie', 'indie rock', 'rock', 'american'],
+    favorite: false
   },
 
   {
@@ -193,7 +198,8 @@ const albumDetails = [
     Upon release, the album was met with universal acclaim from music critics, who praised the album's production and musical structure, and was named as one of the year’s best albums. The album saw some commercial success and debuted at #22 on the Australian albums chart. The song "Breathing Underwater" was nominated for Best R&B Performance at the 58th Grammy Awards.`,
     producer: 'Salaam Remi (exec) and Hiatus Kaiyote',
     release_date: '01 May 2015',
-    genres: [ '2015', 'funk', 'nu jazz', 'acid jazz', 'neo-soul' ]
+    genres: [ '2015', 'funk', 'nu jazz', 'acid jazz', 'neo-soul' ],
+    favorite: false
   },
 
   {
@@ -230,7 +236,8 @@ const albumDetails = [
     description: `Drunk is the third studio album by American musician Thundercat. It was released on February 24, 2017 by Brainfeeder. It features guest appearances from Kenny Loggins, Michael McDonald, Kendrick Lamar, Wiz Khalifa, Mac Miller, and Pharrell. It is his first studio album in nearly four years, his last studio album being Apocalypse. Drunk received positive reviews from music critics. A ChopNotSlop remix from OG Ron C, DJ Candlestick, & The Chopstars entitled 'Drank' was released as a special edition purple vinyl record. <a href="https://www.last.fm/music/Thundercat/Drunk">Read more on Last.fm</a>.`,
     producer: ['Flying Lotus', 'Sounwave', 'Thundercat'],
     release_date: '08 Aug 2020, 13:40',
-    genres: [ 'jazz fusion', 'funk', '2015', 'jazz', 'soul' ]
+    genres: [ 'jazz fusion', 'funk', '2015', 'jazz', 'soul' ],
+    favorite: false
   },
 
   {
@@ -256,7 +263,8 @@ const albumDetails = [
     description: `"Special" is the fourth studio album by American singer and rapper Lizzo. It was released through Nice Life and Atlantic Records on July 15, 2022. It was preceded by the lead single "About Damn Time", released on April 14, 2022. This is her second studio album under a major label, after 2019's "Cuz I Love You". In October 2020, Lizzo announced that her fourth studio album was nearing completion, saying she had "a few more songs to write". In January 2021, American singer SZA confirmed to have heard new material from Lizzo. In August 2021, Lizzo announced "Rumors", her first <a href="https://www.last.fm/music/Lizzo/Special">Read more on Last.fm</a>.`,
     producer: 'Ricky Reed',
     release_date: '07 Jul 2022, 18:26',
-    genres: ['funk', 'pop', 'dance', 'r&b']
+    genres: ['funk', 'pop', 'dance', 'r&b'],
+    favorite: false
   },
 
   {
@@ -280,7 +288,8 @@ const albumDetails = [
     description: `Schvitz is the sixth studio album by American funk band Vulfpeck, released on 30 December 2022 through their own label, Vulf Records. After a brief hiatus, the band returned to recording together for Cory Wong's 2022 album Wong's Cafe, and performed together for the first time in three years at the Levitate Music & Arts Festival in July 2022. It is their first album to feature Wong, Antwaun Stanley and Joey Dosik as prominent performers on all tracks. Announced in November, the album was preceded by six singles.`,
     producer: 'Vulf Records (independent)',
     release_date: '30 Dec 2022',
-    genres: [ 'soul', 'funk', 'novelty', 'jazz funk', 'jazz pop' ]
+    genres: [ 'soul', 'funk', 'novelty', 'jazz funk', 'jazz pop' ],
+    favorite: false
   },
 
   {
@@ -305,7 +314,8 @@ const albumDetails = [
     description: `Back to Black is the second and final studio album by English singer-songwriter Amy Winehouse, released on October 27, 2006 by Island Records. Winehouse predominantly based the album on her tumultuous relationship with then-ex-boyfriend and future husband Blake Fielder-Civil, who temporarily left her to pursue his previous ex-girlfriend. Their short-lived separation spurred her to create an album that explores themes of guilt, grief, infidelity, heartbreak and trauma in a relationship. Influenced by the pop and soul music of 1960s girl groups, Winehouse collaborated with producers Salaam Remi and Mark Ronson, along with Sharon Jones' band The Dap-Kings, to assist her.`,
     producer: 'Mark Ronson',
     release_date: '06 Jun 2022, 20:50',
-    genres: [ 'soul', 'jazz', 'female vocalists', 'british' ]
+    genres: [ 'soul', 'jazz', 'female vocalists', 'british' ],
+    favorite: false
   },
   {
     id: 11,
@@ -328,7 +338,8 @@ const albumDetails = [
     description: `Slippery When Wet is the third studio album by Bon Jovi, released in August 1986 by Mercury Records. Slippery When Wet was an instant commercial success. The album features songs that are today considered as Bon Jovi's most well-known tracks such as You Give Love A bad Name , Livin' On A Prayer and Wanted Dead Or Alive . It spent eight weeks at number one on Billboard 200. Slippery When Wet is the band's best-selling album to date, with over 12 million copies sold in the United States and over 28 million copies worldwide, and received diamond certification from <a href="https://www.last.fm/music/Bon+Jovi/Slippery+When+Wet">Read more on Last.fm</a>.`,
     producer: '	Bruce Fairbairn',
     release_date: '05 May 2010, 19:47',
-    genres: [ 'rock', 'hard rock', '80s', '1986', 'glam metal' ]
+    genres: [ 'rock', 'hard rock', '80s', '1986', 'glam metal' ],
+    favorite: false
   },
   {
     id: 12,
@@ -351,7 +362,8 @@ const albumDetails = [
     description: `An Innocent Man is the ninth studio album by American singer-songwriter Billy Joel, released on August 8, 1983. The concept album is a tribute to the American popular music of Joel's teenage years with Joel paying homage to a number of different popular American musical styles from the late 1950s and early 1960s, most notably doo-wop and soul music. The album cover artwork was taken on the front steps of 142 Mercer Street, just north of the intersection of Mercer and Prince Street in the SoHo neighborhood in New York City. <a href="https://www.last.fm/music/Billy+Joel/An+Innocent+Man">Read more on Last.fm</a>.`,
     producer: 'Phil Ramone',
     release_date: '05 May 2016, 23:47',
-    genres: [ '80s', 'pop', 'rock', 'classic rock', 'billy joel' ]
+    genres: [ '80s', 'pop', 'rock', 'classic rock', 'billy joel' ],
+    favorite: false
   },
   {
     id: 13,
@@ -375,7 +387,8 @@ const albumDetails = [
     description: `Introduction Waking Up, the second studio album by OneRepublic, was released on November 17, 2009. Prior to its release, the band performed many of the songs that ended-up on the final album. Lead singer Ryan Tedder announced on July 21, 2009, that the band's sophomore album would be completed five weeks from that date which was August 25, 2009. The album was completed on that date. The lead single from the album, All The Right Moves, was released on September 29, 2009. Background After the success of OneRepublic's debut album, Dreaming Out Loud, they began work on a sophomore album <a href="https://www.last.fm/music/OneRepublic/Waking+Up">Read more on Last.fm</a>.`,
     producer: 'Noel Zancanella',
     release_date: '05 May 2010, 20:45',
-    genres: [ 'rock', 'alternative rock', '2009', 'pop', 'alternative' ]
+    genres: [ 'rock', 'alternative rock', '2009', 'pop', 'alternative' ],
+    favorite: false
   },
   {
     id: 14,
@@ -398,7 +411,8 @@ const albumDetails = [
     description: `Frontiers is the eighth studio album by the American Rock band Journey, released in February 1983 on the Columbia Records label. This is the last album to feature bassist Ross Valory until 1996's Trial by Fire. The album reached No. 2 on the Billboard 200 chart and would garner four top 40 singles: "After the Fall" (No. 23), "Send Her My Love" (No. 23), "Faithfully" (No. 12), and "Separate Ways (Worlds Apart)" (No. 8), and a rock radio hit in "Chain Reaction". The album would later achieve the RIAA certification of six times platinum. The album had been sequenced and <a href="https://www.last.fm/music/Journey/Frontiers">Read more on Last.fm</a>.`,
     producer: 'Columbia Records',
     release_date: '07 Jul 2016, 23:37',
-    genres: [ 'classic rock', '80s', 'hard rock', 'rock', 'journey' ]
+    genres: [ 'classic rock', '80s', 'hard rock', 'rock', 'journey' ],
+    favorite: false
   },
   {
     id: 15,
@@ -421,7 +435,8 @@ const albumDetails = [
     description: `Considerably lighter than Madman Across the Water, Honky Chateau is a rollicking collection of ballads, rockers, blues, country-rock, and soul songs. On paper, it reads like an eclectic mess, but it plays as the most focused and accomplished set of songs Elton John and Bernie Taupin ever wrote. The skittering boogie of "Honky Cat" and the light psychedelic pop of "Rocket Man" helped send Honky Chateau to the top of the charts, but what is truly impressive about the album is the depth of its material. From the surprisingly cynical and nasty "I Think I'm Gonna Kill Myself" to the <a href="https://www.last.fm/music/Elton+John/Honky+Chateau">Read more on Last.fm</a>.`,
     producer: 'Gus Dudgeon',
     release_date: '03 Mar 2014, 18:06',
-    genres: [ '1972', '70s', 'elton john', 'classic rock', 'rock' ]
+    genres: [ '1972', '70s', 'elton john', 'classic rock', 'rock' ],
+    favorite: false
   },
   {
     id: 16,
@@ -451,7 +466,8 @@ const albumDetails = [
     description: `Abbey Road is the 11th studio album released by the English rock band The Beatles. It is their last recorded album, although Let It Be was the last album released before the band's dissolution in 1970. Work on Abbey Road began in April 1969, and the album was released on 26 September 1969 in the United Kingdom, and 1 October 1969 in the United States. Abbey Road is widely regarded as one of The Beatles' most tightly constructed albums, although the band was barely operating as a functioning unit at the time. Despite the tensions within the band, Abbey Road <a href="https://www.last.fm/music/The+Beatles/Abbey+Road">Read more on Last.fm</a>.`,
     producer: 'Chris Thomas',
     release_date: '08 Aug 2012, 17:29',
-    genres: [ 'rock', '1969', '60s', 'classic rock', 'pop' ]
+    genres: [ 'rock', '1969', '60s', 'classic rock', 'pop' ],
+    favorite: false
   },
   {
     id: 17,
@@ -473,7 +489,8 @@ const albumDetails = [
     description: `Toys in the Attic is the third album by American hard rock band Aerosmith. The album is their second most commercially successful studio album right behind Get a Grip with eight million copies sold in the US alone. Steven Tyler claims that his original idea for the album cover was a teddy bear sitting in the attic with its wrist cut and stuffing spread across the floor. They decided, in the end, to put all of the animals in instead. In 2003, the album was ranked number 228 on Rolling Stone magazine's list of the 500 greatest albums of all <a href="https://www.last.fm/music/Aerosmith/Toys+in+the+Attic">Read more on Last.fm</a>.`,
     producer: 'Walter Mirisch',
     release_date: '06 Jun 2009, 23:02',
-    genres: [ 'hard rock', 'classic rock', 'rock', '1975', '70s' ]
+    genres: [ 'hard rock', 'classic rock', 'rock', '1975', '70s' ],
+    favorite: false
   },
   {
     id: 18,
@@ -497,7 +514,8 @@ const albumDetails = [
     description: `Reggatta de Blanc is the second album by The Police, released in 1979. "Message in a Bottle", a Sting-penned song about alienation, opens the album. It is followed by the mostly instrumental "Reggatta de Blanc", (the title being a pseudo-French translation referring to the album's style of "white reggae") one of the few songs written by all members of the Police. The instrumental piece came from the long instrumental break in the live performance of "Can't Stand Losing You" and earned the band the 1981 Grammy Award for Best Rock Instrumental Performance. "It's Alright For You" is a driving punk-ish <a href="https://www.last.fm/music/The+Police/Reggatta+de+Blanc">Read more on Last.fm</a>.`,
     producer: 'A&M Records',
     release_date: '03 Mar 2009, 12:55',
-    genres: [ 'rock', 'new wave', '80s', 'classic rock', '1979' ]
+    genres: [ 'rock', 'new wave', '80s', 'classic rock', '1979' ],
+    favorite: false
   },
   {
     id: 19,
@@ -522,7 +540,8 @@ const albumDetails = [
     description: `Face Value is the title of Phil Collins' debut solo album, released in February 1981. The album includes one of Collins' biggest, and perhaps most enduring hits, "In the Air Tonight". The album itself reached #1 in the UK, Canada, and many European countries, also meeting the U.S. Top 10. Like the album that followed, Hello, I Must Be Going!, most of the songs on Face Value are based on the pain and anger Collins felt while he was going through his divorce. Other singles didn't have the same chart success as "In the Air Tonight", they were: "I Missed <a href="https://www.last.fm/music/Phil+Collins/Face+Value">Read more on Last.fm</a>.`,
     producer: 'Virgin Records',
     release_date: '03 Mar 2013, 23:54',
-    genres: [ 'pop', '1981', '80s', 'rock', 'soft rock' ]
+    genres: [ 'pop', '1981', '80s', 'rock', 'soft rock' ],
+    favorite: false
   },
   {
     id: 20,
@@ -544,7 +563,8 @@ const albumDetails = [
     description: `Thriller is the best selling album of all time. It is the sixth studio album by American recording artist Michael Jackson. The album was released on November 30, 1982 by Epic Records as the follow-up to Jackson's critically and commercially successful 1979 album Off the Wall. Thriller explores similar genres to those of Off The Wall, including funk, disco, soul, soft rock, jazz and pop. However, Thriller's lyrics deal with generally darker themes, including paranoia and the supernatural. With a production budget of $750,000, recording sessions took place between April and November 1982 at Westlake Recording Studios in Los Angeles, <a href="https://www.last.fm/music/Michael+Jackson/Thriller">Read more on Last.fm</a>.`,
     producer: ' Epic Records',
     release_date: '11 Nov 2014, 04:56',
-    genres: [ 'pop', '80s', 'michael jackson', 'dance', 'soul' ]
+    genres: [ 'pop', '80s', 'michael jackson', 'dance', 'soul' ],
+    favorite: false
   },
 
   {
@@ -570,7 +590,8 @@ const albumDetails = [
     description: 'Worlds is the debut album of Porter Robinson, released on August 12, 2014 through Astralwerks and Virgin EMI Records. After growing frustrated working within the "DJ-friendly limits" of the Complextro genre he pioneered, Robinson sought to create an album inspired by his nostalgia for Japanese video games and MMORPGs. To achieve this, he employed heavy use of Vocaloids, General MIDI sounds, and guest vocals. Worlds has been regarded as one of the most influential EDM records of the 21st century, with Billboard placing it on their "100 Greatest Albums of the 2010s" list. <a href="https://www.last.fm/music/Porter+Robinson/Worlds">Read more on Last.fm</a>.',
     producer: 'Porter Robinson',
     release_date: '10 Oct 2022, 04:12',
-    genres: ['vocaloid', 'electronic', 'edm', '2014', 'chillout']
+    genres: ['vocaloid', 'electronic', 'edm', '2014', 'chillout'],
+    favorite: false
   },
   {
     id: 22,
@@ -596,7 +617,8 @@ const albumDetails = [
     description: 'WLFGRL (pronounced as Wolf Girl), is the debut LP of electronic duo Machine Girl , released on February 16, 2014, via the label Dred Collective. This album contains their signature aesthetic of cyberpunk, 90s movies and anime, extensive sampling, and obscure, uptempo rhythms. <a href="https://www.last.fm/music/Machine+Girl/WLFGRL">Read more on Last.fm</a>.',
     producer: 'Machine Girl',
     release_date: '05 May 2021, 22:20',
-    genres: ['breakcore', '2014', 'electronic', 'footwork', 'digital hardcore']
+    genres: ['breakcore', '2014', 'electronic', 'footwork', 'digital hardcore'],
+    favorite: false
   },
   {
     id: 23,
@@ -629,7 +651,8 @@ const albumDetails = [
       'ambient',
       'singer-songwriter',
       'new age'
-    ]
+    ],
+    favorite: false
   },
   {
     id: 24,
@@ -650,7 +673,8 @@ const albumDetails = [
     description: '3 years after going on hiatus in 2012, they reunited in 2015 with the strongest members, Naoya Ogura on guitar and Isao Yoshino on drums! Since reforming, through solid live performances on stage, they have let the world know once again that "MASS OF THE FERMENTING DREGS IS HERE!" In 2017, they released their new song "Slow Motion Replay". And now, coming on 8 years since the release of the album "Zero Comma, Multicoloured World", their long-awaited 4th album is finally complete! MASS OF THE FERMENTING DREGS gives rise to a rock-like masterpiece only they could create: unfaded destructive force, <a href="https://www.last.fm/music/MASS+OF+THE+FERMENTING+DREGS/No+New+World">Read more on Last.fm</a>.',
     producer: 'Mass of the Fermenting Dregs',
     release_date: '07 Jul 2018, 17:30',
-    genres: ['japanese', 'metal', 'alternative', 'japanese rock', 'indie rock']
+    genres: ['japanese', 'metal', 'alternative', 'japanese rock', 'indie rock'],
+    favorite: false
   },
   {
     id: 25,
@@ -687,7 +711,8 @@ const albumDetails = [
     description: '"Substance" was the first widely released New Order compilation. Issued as a 12-track double LP, a 12-, 24- or 28-track double cassette, and a 24-track double CD, the compilation featured original 12" versions and B-sides, with a few exceptions: “Ceremony” is the 1981 re-recorded version with Gillian Gilbert; “Temptation” and “Confusion” are May 1987 re-recordings; and “The Perfect Kiss”, “Subculture”, “Shellshock”, and “Hurt” are edited versions. Additionally, all of the 24- or 28-track editions confuse the song titles “Cries and Whispers” and “Mesh”. <a href="https://www.last.fm/music/New+Order/Substance">Read more on Last.fm</a>.',
     producer: 'New Order',
     release_date: '09 Sep 2022, 18:38',
-    genres: ['80s', '1987', 'new wave', 'post-punk', 'electronic']
+    genres: ['80s', '1987', 'new wave', 'post-punk', 'electronic'],
+    favorite: false
   },
   {
     id: 26,
@@ -708,7 +733,8 @@ const albumDetails = [
     description: `Boston is the debut studio album by American rock band Boston. Produced by Tom Scholz and John Boylan, the album was released on August 25, 1976, in the United States by Epic Records catalog 32038. Scholz had studied classical piano in his childhood and became involved in the Boston music scene in the late 1960s. He subsequently started to concentrate on demos recorded in his apartment basement with singer Brad Delp, and although their previous group, Mother's Milk, had received numerous rejection letters from major record labels in the early 1970s, by 1975, the demo tape had fallen into the <a href="https://www.last.fm/music/Boston/Boston">Read more on Last.fm</a>.`,
     producer: '	John Boylan, Tom Scholz',
     release_date: '11 Nov 2019, 18:13',
-    genres: ['classic rock', 'rock', '70s', 'hard rock', 'boston']
+    genres: ['classic rock', 'rock', '70s', 'hard rock', 'boston'],
+    favorite: false
   },
   {
     id: 27,
@@ -735,7 +761,8 @@ const albumDetails = [
     description: 'Beatopia is the second studio album by Filipino-British singer and songwriter Beabadoobee. It was released under British independent label Dirty Hit on 15 July 2022, supported by the singles "Talk", "See you Soon", "Lovesong", and "10:36". It features collaborations with singer PinkPantheress, Matty Healy and George Daniel of the 1975, Cavetown, and Jack Steadman of Bombay Bicycle Club. On January 7, 2021, Bea teased with an Instagram post that “new mooosic soon”. On January 10, 2021, she said via Instagram stories, "It’s my favourite thing ever”. Now in a deleted post, she said “this album might as well be called <a href="https://www.last.fm/music/beabadoobee/Beatopia">Read more on Last.fm</a>.',
     producer: 'Beabadoobee, Jacob Bugden, Iain Berryman',
     release_date: '12 Dec 2022, 18:34',
-    genres: ['2022', 'indie pop', 'indie rock', 'dream pop', 'bedroom pop']
+    genres: ['2022', 'indie pop', 'indie rock', 'dream pop', 'bedroom pop'],
+    favorite: false
   },
   {
     id: 28,
@@ -755,7 +782,8 @@ const albumDetails = [
     description: `Twilight is a reissue of bôa's debut studio album from 1998, The Race of a Thousand Camels released in 2001. The first track, "Duvet", became popular after being used as the opening theme song of anime series Serial Experiments Lain. <a href="https://www.last.fm/music/b%C3%B4a/Twilight">Read more on Last.fm</a>.`,
     producer: 'Neil Walsh, Darren Allison, Bôa',
     release_date: '05 May 2022, 05:24',
-    genres: ['alternative rock', '2001', 'british', 'anime', 'rock']
+    genres: ['alternative rock', '2001', 'british', 'anime', 'rock'],
+    favorite: false
   },
   {
     id: 29,
@@ -782,7 +810,8 @@ const albumDetails = [
     description: 'Mercurial World is the debut studio album by American synthpop duo Magdalena Bay, released on October 8, 2021, through Luminelle Recordings and The Orchard. The album received widespread acclaim from critics, and was listed as the best album of 2021 by Gorilla vs. Bear, who also owns their label. 4 singles were released before the release of this album, including “Chaeri”, “Secrets (Your Fire)”’, “You Lose!” and “Hysterical Us” <a href="https://www.last.fm/music/Magdalena+Bay/Mercurial+World">Read more on Last.fm</a>.',
     producer: 'Magdalena Bay',
     release_date: '10 Oct 2022, 14:14',
-    genres: ['2021', 'synthpop', 'electropop', 'house', 'indie']
+    genres: ['2021', 'synthpop', 'electropop', 'house', 'indie'],
+    favorite: false
   },
   {
     id: 30,
@@ -807,7 +836,8 @@ const albumDetails = [
       'post-rock',
       'black metal',
       'post-black metal'
-    ]
+    ],
+    favorite: false
   },
   {
     id: 31,
@@ -833,8 +863,10 @@ const albumDetails = [
     description: `Is There Anybody Out There? is the debut album from American pop duo A Great Big World. Its single "Say Something" achieved considerable success after Christina Aguilera heard the song, decided to collaborate and a re-recorded version was released.`,
     producer: 'Dan Romer',
     release_date: '14 Jan 2014, 14:32',
-    genres: ['indie pop', 'indie', 'pop', 'sad', 'piano']
-  }, {
+    genres: ['indie pop', 'indie', 'pop', 'sad', 'piano'],
+    favorite: false
+  }, 
+  {
     id: 32,
     title: 'Forget the World',
     artist: 'Afrojack',
@@ -858,8 +890,10 @@ const albumDetails = [
     description: `It's basically a message not just to my fans, but also to myself, to always remember to keep following your heart, keep following your path, and never try to let the things around you get you down.`,
     producer: 'DJ Buddha',
     release_date: '01 Jan 2014, 14:33',
-    genres: ['electronic', 'house', 'dance', 'electro house', 'pop']
-  }, {
+    genres: ['electronic', 'house', 'dance', 'electro house', 'pop'],
+    favorite: false
+  }, 
+  {
     id: 33,
     title: 'Best Day Ever',
     artist: 'Mac Miller',
@@ -886,8 +920,10 @@ const albumDetails = [
     description: `This album epitomizes Mac Miller's outlook on his life. Through bouts of extreme sedation, heartbreak, and moments of self doubt, Miller knew above all that life was good.`,
     producer: 'ID Labs',
     release_date: '03 Mar 2011, 14:22',
-    genres: ['hip-hop', 'hip hop', 'mac miller', 'rap', '2011']
-  }, {
+    genres: ['hip-hop', 'hip hop', 'mac miller', 'rap', '2011'],
+    favorite: false
+  }, 
+  {
     id: 34,
     title: 'Dizzy Up the Girl',
     artist: 'The Goo Goo Dolls',
@@ -905,8 +941,10 @@ const albumDetails = [
     description: `Every song helmed by singer/guitarist Johnny Rzeznik boasts an explosive chorus. The four tracks with bassist Robby Takac singing are the ones that maintain a punk aesthetic, but with a refined sense of composition.`,
     producer: 'Rob Cavallo',
     release_date: '22 Sep 1998, 14:49',
-    genres: ['rock', 'indie', 'alternative', 'post-grunge', '90s']
-  }, {
+    genres: ['rock', 'indie', 'alternative', 'post-grunge', '90s'],
+    favorite: false
+  }, 
+  {
     id: 35,
     title: 'Living Proof',
     artist: 'State Champs',
@@ -930,8 +968,10 @@ const albumDetails = [
     description: 'Living Proof is the third studio album from American pop punk band State Champs. it was Released on June 15th, 2018 via Pure Noise Records. It is also the last album with ex-rhythm guitarist Tony "Rival" Diaz who left the band in March of 2020. <a href="https://www.last.fm/music/State+Champs/Living+Proof">Read more on Last.fm</a>.',
     producer: 'Mike Green',
     release_date: '06 Jun 2020, 14:49',
-    genres: ['pop punk', 'rock', '2018']
-  }, {
+    genres: ['pop punk', 'rock', '2018'],
+    favorite: false
+  }, 
+  {
     id: 36,
     title: 'Stories',
     artist: 'Avicii',
@@ -956,8 +996,10 @@ const albumDetails = [
     description: 'Stories is the second studio album by Swedish DJ Avicii. It was released on October 2, 2015, through PRMD and Island. The album was produced by Avicii with additional production done by Salem Al Fakir, Alex Ebert, Carl Falk, Kristoffer Fogelmark, Martin Garrix, Dhani Lennevald, Ash Pournouri, Albin Nedler, and Vincent Pontare on several of the tracks. Stories was released to mixed to positive reviews from music critics. Three singles were released from the album: "Waiting for Love", "Pure Grinding", and "For a Better Day". In addition, three promotional singles were released: "Broken Arrows", "Ten More Days", and "Gonna Love <a href="https://www.last.fm/music/Avicii/Stories">Read more on Last.fm</a>.',
     producer: 'Levan Tsikurishvili',
     release_date: '11 Nov 2015, 03:09',
-    genres: ['swedish', 'dance', '2015', '2015 single', 'house']
-  }, {
+    genres: ['swedish', 'dance', '2015', '2015 single', 'house'],
+    favorite: false
+  }, 
+  {
     id: 37,
     title: 'the highs.',
     artist: 'mike.',
@@ -979,8 +1021,10 @@ const albumDetails = [
     description: `“the highs.” is Mike Stud's first album to be officially released under his new name and style of music. He now goes by the name “mike.” This is the first album of the upcoming trilogy he has in the works. “the highs, the lows and the inbetweens.” These are all part of the "KEEPGOING" trilogy under his new name and style. <a href="https://www.last.fm/music/mike./the+highs.">Read more on Last.fm</a>.`,
     producer: 'Mike Stud',
     release_date: '03 Mar 2022, 23:44',
-    genres: ['rap', 'hip-hop', 'hip hop']
-  }, {
+    genres: ['rap', 'hip-hop', 'hip hop'],
+    favorite: false
+  }, 
+  {
     id: 38,
     title: 'Blacc Hollywood',
     artist: 'Wiz Khalifa',
@@ -1004,7 +1048,8 @@ const albumDetails = [
     description: 'Blacc Hollywood is the upcoming fifth studio album by American rapper Wiz Khalifa. It is set to be released on August 19, 2014. <a href="https://www.last.fm/music/Wiz+Khalifa/Blacc+Hollywood">Read more on Last.fm</a>.',
     producer: 'Niko Marzouca',
     release_date: '08 Aug 2014, 22:52',
-    genres: ['2014', 'hip hop', 'hip-hop', 'rap', 'myspotigrambot']
+    genres: ['2014', 'hip hop', 'hip-hop', 'rap', 'myspotigrambot'],
+    favorite: false
   },
   {
     id: 39,
@@ -1026,8 +1071,10 @@ const albumDetails = [
     description: `Brothers in Arms is the fifth studio album by British rock band Dire Straits, released in 1985. The first half of the album is a development of their unique brand of arena rock which had evolved in their music since the 1980 album Making Movies, while the second half consists of more folk-influenced material. The whole album maintains the original Dire Straits' bluesy and laid back guitar-based sound whilst retaining a more lavish and bombastic production and overall sound. It is the band's best selling album. Brothers in Arms was one of the first albums to be directed at the <a href="https://www.last.fm/music/Dire+Straits/Brothers+in+Arms">Read more on Last.fm</a>.`,
     producer: 'Neil Dorfsman',
     release_date: '09 Sep 2009, 14:13',
-    genres: ['classic rock', 'dire straits', 'rock', '80s', '1985']
-  }, {
+    genres: ['classic rock', 'dire straits', 'rock', '80s', '1985'],
+    favorite: false
+  }, 
+  {
     id: 40,
     title: 'Come Back Road',
     artist: 'Logan Mize',
@@ -1050,7 +1097,8 @@ const albumDetails = [
     description: `Logan Mize was born and raised in the small farm town of Clearwater, Kansas where his entire family owns and operates the town's only grocery store, Mize's Thriftway.`,
     producer: 'Paramount Music',
     release_date: '19 July 2017, 14:13',
-    genres: ['country', '2010s', 'ballad']
+    genres: ['country', '2010s', 'ballad'],
+    favorite: false
   },
 
 ]
