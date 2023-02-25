@@ -1,9 +1,9 @@
 
-const knexConfig = require('./db/knexfile');
-const knex = require('knex')(knexConfig[process.env.NODE_ENV])
-const albums = require('./data/albums')
-const reviews = require('./data/reviews')
-const albumDetails = require('./data/albumDetails')
+const knexConfig = require('./knexfile');
+const knex = require('knex')(knexConfig[process.env.NODE_ENV || "development"])
+// const albums = require('./data/albums')
+// const reviews = require('./data/reviews')
+// const albumDetails = require('./data/albumDetails')
 const express = require('express');
 const { request } = require('http');
 const { response } = require('express');
@@ -13,14 +13,26 @@ const fs = require('fs');
 
 app.use(express.json());
 
-app.locals = {
-  albums,
-  reviews,
-  albumDetails
-}
+// app.locals = {
+//   albums,
+//   reviews,
+//   albumDetails
+// }
 
 app.get('/albums', (req, res) => {
-  res.send(albums)
+  knex('album')
+  .select({
+    id: 'id',
+    title: 'title',
+    artist: 'artist',
+    image: 'image'
+  })
+  .then((albums) => {
+    return res.json(albums)
+  })
+  .catch((error) => {
+    console.log(error)
+  })
 });
 
 app.get('/albums/reviews', (req, res) => {
