@@ -54,5 +54,15 @@ app.post('/albums/reviews', (request, response) => {
   })
 })
 
+app.get('/albums/reviews', (request, response) => {
+  queries.getReviews()
+  .then(reviews => {
+    return response.status(200).json(reviews)
+  })
+  .catch((error) => {
+    response.status(500).json({error})
+  })
+})
+
 
   

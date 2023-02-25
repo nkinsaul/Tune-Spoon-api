@@ -14,5 +14,9 @@ module.exports = {
 
   addReview(review) {
     return database("reviews").insert(review, "id")
+  },
+
+  getReviews() {
+    return database('reviews');
   }
 }
