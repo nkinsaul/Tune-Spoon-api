@@ -9,7 +9,8 @@ exports.up = function(knex) {
     table.string('title')
     table.string('artist')
     table.string('image')
-    table.timestamp(true, true);
+    table.boolean('favorite')
+    table.timestamps(true, true);
   })
   .createTable('album_details', table => {
     table.increments('id').primary();
@@ -22,14 +23,15 @@ exports.up = function(knex) {
     table.string('producer');
     table.string('release_date');
     table.specificType('genres', 'text ARRAY');
-    table.timestamp(true, true);
+    table.boolean('favorite');
+    table.timestamps(true, true);
   })
   .createTable('reviews', table => {
     table.increments('id').primary();
     table.integer('album_id');
     table.integer('user_id');
     table.specificType('review_text', 'varchar');
-    table.timestamp(true, true);
+    table.timestamps(true, true);
   })
 };
 /**
