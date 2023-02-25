@@ -20,6 +20,10 @@ app.use(express.json());
 //   albumDetails
 // }
 
+app.listen(port, () => {
+  console.log(`Listening on port ${port}...`)
+});
+
 app.get('/albums', (req, res) => {
   queries
   .getAllAlbums()
@@ -31,39 +35,24 @@ app.get('/albums', (req, res) => {
   })
 });
 
-app.get('/albums/reviews', (req, res) => {
-  const { reviews }  = app.locals
-  res.status(200).json(reviews)
-});
-
-app.get('/albums/:id/reviews/', (req, res) => {
-   const { id } = req.params
-   const { reviews } = app.locals
-   let reviewsId = reviews.find(review => review.albumID == id);
-   
-
-   if (!reviewsId) {
-    return res.status(404).json({
-      message: `No reviews found with an id of ${id}`
-    });
-  }
-   res.status(200).json(reviewsId);
-});
-
-app.listen(port, () => {
-  console.log(`Listening on port ${port}...`)
-});
-
 app.get('/album/:albumId', (req, res) => {
-  const albumId = req.params.albumId
-  const album = albumDetails.find(album => album.id.toString() === albumId)
+  queries.getSingleAlbum(req)
+  .then((album) => {
+    return res.json(album)
+  })
+  .catch((error) => {
+    console.log(error);
+  })
+  // const albumId = req.params.albumId
+  // const album = albumDetails.find(album => album.id.toString() === albumId)
+  // const album = queries.getSingleAlbum(req)
 
-  if (!album) {
-    return res.sendStatus(404).json({
-      message: `No albums found with an id of ${id}`
-    })
-  }
-  res.status(200).json(album)
+  // if (!album) {
+  //   return res.sendStatus(404).json({
+  //     message: `No albums found with an id of ${id}`
+  //   })
+  // }
+  // res.status(200).json(album)
 })
 
 app.post('/albums/reviews', (request, response) => {
@@ -119,4 +108,24 @@ if((!userData.favoriteAlbums.includes(id)) && id <= albums.length) {
   res.send('This album does not exist.')
 }
 })
+
+// app.get('/albums/reviews', (req, res) => {
+//   const { reviews }  = app.locals
+//   res.status(200).json(reviews)
+// });
+
+// app.get('/albums/:id/reviews/', (req, res) => {
+//    const { id } = req.params
+//    const { reviews } = app.locals
+//    let reviewsId = reviews.find(review => review.albumID == id);
+   
+
+//    if (!reviewsId) {
+//     return res.status(404).json({
+//       message: `No reviews found with an id of ${id}`
+//     });
+//   }
+//    res.status(200).json(reviewsId);
+// });
+
  

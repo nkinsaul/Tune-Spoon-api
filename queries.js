@@ -1,15 +1,20 @@
 const knexConfig = require('./knexfile');
-const knex = require('knex')(knexConfig[process.env.NODE_ENV || "development"])
+const database = require('knex')(knexConfig[process.env.NODE_ENV || "development"])
 
 module.exports = {
 
-    getAllAlbums() {
-      return knex('album')
-      .select({
-        id: 'id',
-        title: 'title',
-        artist: 'artist',
-        image: 'image'
-      })
-    }  
+  getAllAlbums() {
+    return database('album')
+    .select({
+      id: 'id',
+      title: 'title',
+      artist: 'artist',
+      image: 'image'
+    })
+  },
+
+  getSingleAlbum(req) {
+    const albumId = req.params.albumId;
+    return database('album_details').where("id", albumId).select()
+  }
 }
