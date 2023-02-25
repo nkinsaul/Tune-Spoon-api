@@ -1,8 +1,5 @@
 // Update with your config settings.
 
-/**
- * @type { Object.<string, import("knex").Knex.Config> }
- */
 module.exports = {
 
   development: {
@@ -10,7 +7,7 @@ module.exports = {
     connection: {
       database: 'tune_spoon',
       user:     'postgres',
-      password: 'admin'
+      password: 'daisy'
     },
     pool: {
       min: 2,
@@ -26,20 +23,22 @@ module.exports = {
     useNullAsDefault: true
   },
 
-  // production: {
-  //   client: 'postgresql',
-  //   connection: {
-  //     database: 'my_db',
-  //     user:     'username',
-  //     password: 'password'
-  //   },
-  //   pool: {
-  //     min: 2,
-  //     max: 10
-  //   },
-  //   migrations: {
-  //     tableName: 'knex_migrations'
-  //   }
-  // }
+  production: {
+    client: 'postgresql',
+    connection: {
+      database: 'tune_spoon',
+      user:     'postgres',
+      password: 'WzPgE78UZoQIyML',
+      host: 'fdaa:1:6ef8:0:1::2',
+      port: 5432,
+    },
+    pool: {
+      min: 2,
+      max: 10
+    },
+    migrations: {
+      tableName: 'knex_migrations'
+    }
+  }
 
 };

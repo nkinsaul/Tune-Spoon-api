@@ -7,7 +7,7 @@ This repo was created to be used with the Tune-Spoon project.
 Clone this down, and `cd` into it.  Then run:
 
 `npm install`
-
+`cp .env.template .env`
 `npm start`
 
 ## Endpoints

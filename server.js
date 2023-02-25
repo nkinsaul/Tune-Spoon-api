@@ -1,10 +1,13 @@
+const express = require('express');
 
-const knexConfig = require('./db/knexfile');
-const knex = require('knex')(knexConfig[process.env.NODE_ENV])
+require("dotenv").config()
+const knexConfig = require('./knexfile');
+console.log("running in", process.env)
+
+const knex = require('knex')(knexConfig[process.env.APP_ENV])
 const albums = require('./data/albums')
 const reviews = require('./data/reviews')
 const albumDetails = require('./data/albumDetails')
-const express = require('express');
 const { request } = require('http');
 const { response } = require('express');
 const app = express();

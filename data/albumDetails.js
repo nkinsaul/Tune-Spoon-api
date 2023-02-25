@@ -251,7 +251,7 @@ const albumDetails = [
     ],
     length: 1172,
     description: `"Special" is the fourth studio album by American singer and rapper Lizzo. It was released through Nice Life and Atlantic Records on July 15, 2022. It was preceded by the lead single "About Damn Time", released on April 14, 2022. This is her second studio album under a major label, after 2019's "Cuz I Love You". In October 2020, Lizzo announced that her fourth studio album was nearing completion, saying she had "a few more songs to write". In January 2021, American singer SZA confirmed to have heard new material from Lizzo. In August 2021, Lizzo announced "Rumors", her first <a href="https://www.last.fm/music/Lizzo/Special">Read more on Last.fm</a>.`,
-    label: 'Ricky Reed',
+    producer: 'Ricky Reed',
     releaseDate: '07 Jul 2022, 18:26',
     genre: ['funk', 'pop', 'dance', 'r&b']
   },
