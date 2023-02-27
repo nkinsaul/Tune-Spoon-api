@@ -6,7 +6,7 @@
 module.exports = {
 
   development: {
-    client: 'postgresql',
+    client: 'postgres',
     connection: {
       port: 5432,
       database: 'tune_spoon',
@@ -27,7 +27,7 @@ module.exports = {
     useNullAsDefault: true
   },
   production: {
-    client: 'postgresql',
+    client: 'postgres',
     connection: {
       connectionString: process.env.DATABASE_URL,
       ssl: { rejectUnauthorized: false }, 
