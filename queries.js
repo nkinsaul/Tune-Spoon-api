@@ -8,8 +8,8 @@ const database = require('knex')(configuration);
 module.exports = {
 
   getAllAlbums() {
-    console.log("HERE IS THE DATABASEEEEEEEEEEEEEEEEEEE",database)
-    console.log("!!!!!!!!!!!!!!!!!!!database('album')", database('album').select('*'))
+    // console.log("HERE IS THE DATABASEEEEEEEEEEEEEEEEEEE",database)
+    // console.log("!!!!!!!!!!!!!!!!!!!database('album')", database('album').select('*'))
     return database('album').select('*')
   },
 
