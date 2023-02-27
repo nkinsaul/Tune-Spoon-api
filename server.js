@@ -1,84 +1,83 @@
-
-const albums = require('./data/albums')
-const reviews = require('./data/reviews')
-const albumDetails = require('./data/albumDetails')
 const express = require('express');
-const { request } = require('http');
-const { response } = require('express');
 const app = express();
+require('dotenv').config();
 const port = process.env.PORT || 3000;
-console.log(process.env)
-const fs = require('fs');
 const environment = process.env.NODE_ENV || 'development'
 
 app.use(express.json());
-
-
-app.locals = {
-  albums,
-  reviews,
-  albumDetails
-}
-
-app.get('/albums', (req, res) => {
-  res.send(albums)
-});
-
-app.get('/albums/reviews', (req, res) => {
-  const { reviews }  = app.locals
-  res.status(200).json(reviews)
-});
-
-
-app.get('/albums/:id/reviews/', (req, res) => {
-   const { id } = req.params
-   const { reviews } = app.locals
-   let reviewsId = reviews.find(review => review.albumID == id);
-   
-
-   if (!reviewsId) {
-    return res.status(404).json({
-      message: `No reviews found with an id of ${id}`
-    });
-  }
-   res.status(200).json(reviewsId);
-});
-
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}...`)
 });
 
-app.get('/album/:albumId', (req, res) => {
-  const albumId = req.params.albumId
-  const album = albumDetails.find(album => album.id.toString() === albumId)
+app.get('/albums', (request, response) => {
+  queries.getAllAlbums()
+  .then((albums) => {
+    return response.status(200).json(albums)
+  })
+  .catch((error) => {
+    response.status(500).json({error});
+  })
+});
 
-  if (!album) {
-    return res.sendStatus(404).json({
-      message: `No albums found with an id of ${id}`
-    })
-  }
-  res.status(200).json(album)
+app.get('/album/:albumId', (request, response) => {
+  const albumId = request.params.albumId;
+  queries.getSingleAlbum(albumId)
+  .then((album) => {
+    if (!albumId) {
+      return response.sendStatus(404).json({
+        message: `No albums found with an id of ${albumId}`
+      })
+    }
+    return response.status(200).json(album)
+  })
+  .catch((error) => {
+    response.status(500).json({error});
+  })
 })
 
 app.post('/albums/reviews', (request, response) => {
-  const reviewID = Date.now();
-  const reviewBody = request.body;
-  for(let requiredParameter of ['userName', 'albumID', 'review', 'userID']) {
-    if(!reviewBody[requiredParameter]) {
-      response
-        .status(422).json()
-        .send({error: `Expected format: { userName: <String>, albumID: <Number>, reviewText: <String>}.  You're missing a ${requiredParameter}.`})
+  const review = request.body;
+
+  for(let requiredParameter of ['album_id', 'user_id', 'review_text']) {
+    if(!review[requiredParameter]) {
+      return response 
+        .status(422)
+        .send({error: `Expected format: {album_id: <num>, user_id: <num>, review_text: <str>}  You are missing ${requiredParameter} property.`})
     }
   }
-  
-  const { albumID, review, userID } = reviewBody
-   
-  const album = app.locals.reviews.find(album => 
-    albumID === album.albumID.toString()
-  )
-  
-  album.reviews.push({reviewID, review, userID})
-  
-  response.status(201).json({review, reviewID, userID})
+  queries.addReview(review)
+  .then(data => response.status(200).json(data))
+  .catch((error) => {
+    response.status(500).json({error})
+  })
+})
+
+app.get('/albums/reviews', (request, response) => {
+  queries.getReviews()
+  .then(reviews => {
+    return response.status(200).json(reviews)
+  })
+  .catch((error) => {
+    response.status(500).json({error})
+  })
+})
+
+app.delete('/albums/reviews', (request, response) => {
+  const reviewId = request.body.review_id
+  queries.deleteReview(reviewId)
+  .then((deletedReview) => {
+    if (deletedReview) {
+      response.status(200).json({
+        message: `Review with an id of ${reviewId} has been deleted.`
+      })
+    } else {
+      response.status(404).json({
+        error: `Could not find a review with an id of ${reviewId}`
+      })
+    }
+  })
+  .catch((error) => {
+    response.status(500).json({error})
+  })
 })

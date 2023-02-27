@@ -15,10 +15,3 @@ exports.seed = function(knex) {
       return knex('album_details').insert(albumDetails)
     })
 };
-
-// .createTable('album', table => {
-//   table.increments('id').primary();
-//   table.string('title')
-//   table.string('artist')
-//   table.string('image')
-//   table.timestamp(true, true);
