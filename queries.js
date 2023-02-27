@@ -1,13 +1,16 @@
-const knexConfig = require('./knexfile');
-const database = require('knex')(knexConfig[process.env.NODE_ENV || "development"])
+// const knexConfig = require('./knexfile');
+// const database = require('knex')(knexConfig[process.env.NODE_ENV || "development"])
+
+const environment = process.env.NODE_ENV || 'development';
+const configuration = require('./knexfile')[environment];
+const database = require('knex')(configuration);
 
 module.exports = {
 
   getAllAlbums() {
     console.log("HERE IS THE DATABASEEEEEEEEEEEEEEEEEEE",database)
     console.log("process.env", process.env)
-    return database('album')
-    .select()
+    return database('album').select()
   },
 
   getSingleAlbum(albumId) {
