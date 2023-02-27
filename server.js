@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors')
 const app = express();
 require('dotenv').config();
 const port = process.env.PORT || 3000;
@@ -6,6 +7,7 @@ const queries = require('./queries')
 // const environment = process.env.NODE_ENV || 'development'
 
 app.use(express.json());
+app.use(cors())
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}...`)
