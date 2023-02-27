@@ -3,8 +3,9 @@ import express from 'express'
 const app = express();
 require('dotenv').config();
 const port = process.env.PORT || 3000;
-const environment = process.env.NODE_ENV || 'development'
 const queries = require('./queries')
+const environment = process.env.NODE_ENV || 'development'
+console.log('read process.env', process.env)
 
 app.use(express.json());
 
