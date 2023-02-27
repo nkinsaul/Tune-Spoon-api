@@ -10,7 +10,8 @@ module.exports = {
   getAllAlbums() {
     console.log("HERE IS THE DATABASEEEEEEEEEEEEEEEEEEE",database)
     console.log("process.env", process.env)
-    return database('album').select()
+    console.log("database('album')", database('album'))
+    return database('album')
   },
 
   getSingleAlbum(albumId) {
