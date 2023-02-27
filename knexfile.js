@@ -36,21 +36,4 @@ module.exports = {
     },
     useNullAsDefault: true
   }
-
-  // production: {
-  //   client: 'postgresql',
-  //   connection: {
-  //     database: 'tunespoon',
-  //     user:     'postgres',
-  //     password: 'daisy'
-  //   },
-  //   pool: {
-  //     min: 2,
-  //     max: 10
-  //   },
-  //   migrations: {
-  //     tableName: 'knex_migrations'
-  //   }
-  // }
-
 };
