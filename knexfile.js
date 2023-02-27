@@ -8,10 +8,10 @@ module.exports = {
   development: {
     client: 'postgresql',
     connection: {
-      port: 5433,
-      database: 'tune_spoon_2',
+      port: 5432,
+      database: 'tune_spoon',
       user:     'postgres',
-      password: 'Slacker-Handmade2-Uneasily'
+      password: 'daisy'
     },
     pool: {
       min: 2,
@@ -26,13 +26,25 @@ module.exports = {
     },
     useNullAsDefault: true
   },
+  production: {
+    client: 'postgresql',
+    connection: {
+      connectionString: process.env.DATABASE_URL,
+      ssl: { rejectUnauthorized: false }, 
+    }
+    ,
+    migrations: {
+      directory: './migrations'
+    },
+    useNullAsDefault: true
+  }
 
   // production: {
   //   client: 'postgresql',
   //   connection: {
-  //     database: 'my_db',
-  //     user:     'username',
-  //     password: 'password'
+  //     database: 'tunespoon',
+  //     user:     'postgres',
+  //     password: 'daisy'
   //   },
   //   pool: {
   //     min: 2,
