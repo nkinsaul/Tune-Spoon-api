@@ -4,6 +4,7 @@ const database = require('knex')(knexConfig[process.env.NODE_ENV || "development
 module.exports = {
 
   getAllAlbums() {
+    console.log("HERE IS THE DATABASEEEEEEEEEEEEEEEEEEE",database)
     return database('album')
     .select()
   },
