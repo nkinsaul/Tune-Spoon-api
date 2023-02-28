@@ -1,11 +1,11 @@
-const knexConfig = require('./knexfile');
-const database = require('knex')(knexConfig[process.env.NODE_ENV || "development"])
+require("dotenv").config()
+const knexConfig = require('./knexfile')[process.env.NODE_ENV || "development"];
+const database = require('knex')(knexConfig);
 
 module.exports = {
 
   getAllAlbums() {
-    return database('album')
-    .select()
+    return database('album').select()
   },
 
   getSingleAlbum(albumId) {

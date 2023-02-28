@@ -1,11 +1,12 @@
-
 const express = require('express');
+const cors = require('cors')
 const app = express();
 require('dotenv').config();
 const port = process.env.PORT || 3000;
 const queries = require('./queries')
 
 app.use(express.json());
+app.use(cors())
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}...`)
@@ -17,7 +18,7 @@ app.get('/albums', (request, response) => {
     return response.status(200).json(albums)
   })
   .catch((error) => {
-    response.status(500).json({error});
+    response.status(500).json(error);
   })
 });
 
